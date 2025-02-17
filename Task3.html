@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Counter UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            width: 90vw;
+            max-width: 500px;
+            height: 90vw;
+            max-height: 500px;
+            gap: 8px;
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            height: 100%;
+        }
+        .red {
+            background-color: red;
+        }
+        .gray {
+            background-color: gray;
+        }
+        .center {
+            background-color: pink;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            width: 80%;
+            max-width: 150px;
+            text-align: center;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        .btn-dec {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .btn-inc {
+            background-color: #4CAF50;
+            color: white;
+        }
+        @media (max-width: 500px) {
+            .container {
+                width: 95vw;
+                height: 95vh;
+            }
+            .btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box gray"></div>
+        <div class="box red"></div>
+
+        <div class="box gray">
+            <button class="btn btn-dec" onclick="decrement()">Decrement</button>
+        </div>
+        <div class="box center">
+            <p id="datetime"></p>
+            <p>Counter: <span id="counter">0</span></p>
+        </div>
+        <div class="box gray">
+            <button class="btn btn-inc" onclick="increment()">Increment</button>
+        </div>
+
+        <div class="box red"></div>
+        <div class="box gray"></div>
+        <div class="box red"></div>
+    </div>
+
+    <script>
+        let counter = 0;
+        const counterElement = document.getElementById("counter");
+
+        function increment() {
+            counter++;
+            counterElement.textContent = counter;
+        }
+
+        function decrement() {
+            counter--;
+            counterElement.textContent = counter;
+        }
+
+        function updateDateTime() {
+            const now = new Date();
+            const istTime = new Intl.DateTimeFormat('en-IN', {
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                weekday: 'long',
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+            }).format(now);
+
+            document.getElementById("datetime").textContent = istTime;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+</body>
+</html>

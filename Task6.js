@@ -1,33 +1,3 @@
-// async function harry() {
-     
-//     let delhiWeather = new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve("27 Deg");
-//         }, 2000);  
-//     });
-
- 
-//     let bangaloreWeather = new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve("21 Deg");
-//         }, 5000); 
-//     });
-
-//     // delhiWeather.then(alert)
-//     // bangaloreWeather.then(alert)
-    
-//     let delhi = await delhiWeather;
-//     console.log("delhi weather has been fetched:-", delhi)
-
-//     let bangalore = await bangaloreWeather;
-//     console.log("bangalore weather has been fetched:-", bangalore)
-// }
-
-// console.log("Welcome to weather forecasting");
-// harry();
-
-
-
 
 
 
