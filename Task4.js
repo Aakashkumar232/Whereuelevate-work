@@ -67,7 +67,7 @@ button.addEventListener('click', function() {
 });
 
 
-                                           // Event Object:
+                                           // Event Object:-
 
  //    When an event occurs, an event object is created, which contains information about the event (e.g., the target element, mouse position).
 
@@ -75,7 +75,7 @@ button.addEventListener('click', function() {
     console.log(event.target); // The element that triggered the event
 });
 
-                                        // Removing Event Listeners:
+                                        // Removing Event Listeners:-
 
 //  You can remove an event listener using removeEventListener():       
 
@@ -87,7 +87,7 @@ button.addEventListener('click', handleClick);
 button.removeEventListener('click', handleClick);
 
 
-                                             //Event Propagation
+                                             //Event Propagation:-
 
 //                                              Events can propagate in two phases: capturing and bubbling. You can control this behavior using the useCapture parameter in addEventListener().
 // Bubbling is the default behavior, where the event starts from the target element and bubbles up to the root.
@@ -99,7 +99,7 @@ parentElement.addEventListener('click', function() {
 
 
 
-                                            //Event Delegation:
+                                            //Event Delegation:-
 
  // Event Delegation is a technique in JavaScript that allows you to manage events more efficiently by taking advantage of the event bubbling phase. Instead of attaching event listeners to individual child elements, you attach a single event listener to a parent element.
 
